@@ -1,0 +1,11 @@
+{
+	Name = Hashblue;
+	AppleEventCode = HSBL;
+	Commands = {
+		GetURL = {
+			CommandClass = OpenURLCommand;
+			AppleEventCode = GURL;
+			AppleEventClassCode = GURL;
+		};
+	};
+}

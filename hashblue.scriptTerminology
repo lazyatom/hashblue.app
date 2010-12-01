@@ -1,0 +1,10 @@
+{
+	Name = "Hashblue commands";
+	Description = "commands to handle opening a URL";
+	Commands = {
+		GetURL = {
+			Name = "get URL";
+			Description = "Open a URL";
+		};
+	};
+}

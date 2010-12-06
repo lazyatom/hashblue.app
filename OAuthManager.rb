@@ -1,7 +1,7 @@
 require 'net/https'
 require 'uri'
-require 'rubygems'
-require 'json'
+$LOAD_PATH.unshift File.expand_path("../gems/json_pure-1.4.6/lib", __FILE__)
+require 'json/pure'
 
 class OAuthManager
 	IDENTIFIER = 'soaE0hCXWAE5jwpW'

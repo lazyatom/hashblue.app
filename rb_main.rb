@@ -1,3 +1,6 @@
+ENV['GEM_HOME'] = File.expand_path("../gems", __FILE__)
+require 'rubygems'
+
 # Loading the Cocoa framework. If you need to load more frameworks, you can
 # do that here too.
 framework 'Cocoa'

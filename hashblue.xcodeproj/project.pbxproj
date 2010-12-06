@@ -48,7 +48,7 @@
 		1A0F864D12A51B7A00C16666 /* hashblue.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = 1A0F864C12A51B7A00C16666 /* hashblue.scriptTerminology */; };
 		1A0F864F12A51BFC00C16666 /* OpenURLCommand.rb in Resources */ = {isa = PBXBuildFile; fileRef = 1A0F864E12A51BFC00C16666 /* OpenURLCommand.rb */; };
 		1A2F653912A536FA00E8EF68 /* OAuthManager.rb in Resources */ = {isa = PBXBuildFile; fileRef = 1A2F653812A536FA00E8EF68 /* OAuthManager.rb */; };
-		1AA2513D12AD3ED500CBBB98 /* gems in Resources */ = {isa = PBXBuildFile; fileRef = 1AA250A512AD3ED500CBBB98 /* gems */; };
+		1AA253F112AD467800CBBB98 /* gems in Resources */ = {isa = PBXBuildFile; fileRef = 1AA2534B12AD467800CBBB98 /* gems */; };
 		2BFA9DA710CDF852007972A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA9DA510CDF852007972A1 /* MainMenu.xib */; };
 		4DE339F70D74FCDD00ADB6EE /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4DE339F60D74FCDD00ADB6EE /* rb_main.rb */; };
 		4DE3BE140D8651D900ECA448 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE3BE130D8651D900ECA448 /* MacRuby.framework */; };
@@ -80,7 +80,7 @@
 		1A0F864C12A51B7A00C16666 /* hashblue.scriptTerminology */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.scriptTerminology; path = hashblue.scriptTerminology; sourceTree = "<group>"; };
 		1A0F864E12A51BFC00C16666 /* OpenURLCommand.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = OpenURLCommand.rb; sourceTree = "<group>"; };
 		1A2F653812A536FA00E8EF68 /* OAuthManager.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = OAuthManager.rb; sourceTree = "<group>"; };
-		1AA250A512AD3ED500CBBB98 /* gems */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gems; sourceTree = "<group>"; };
+		1AA2534B12AD467800CBBB98 /* gems */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gems; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -166,7 +166,6 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				1AA250A512AD3ED500CBBB98 /* gems */,
 				4DE339F60D74FCDD00ADB6EE /* rb_main.rb */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -176,6 +175,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1AA2534B12AD467800CBBB98 /* gems */,
 				1A0F864C12A51B7A00C16666 /* hashblue.scriptTerminology */,
 				1A0F864A12A51B1E00C16666 /* hashblue.scriptSuite */,
 				2BFA9DA510CDF852007972A1 /* MainMenu.xib */,
@@ -256,7 +256,7 @@
 				1A0F864D12A51B7A00C16666 /* hashblue.scriptTerminology in Resources */,
 				1A0F864F12A51BFC00C16666 /* OpenURLCommand.rb in Resources */,
 				1A2F653912A536FA00E8EF68 /* OAuthManager.rb in Resources */,
-				1AA2513D12AD3ED500CBBB98 /* gems in Resources */,
+				1AA253F112AD467800CBBB98 /* gems in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

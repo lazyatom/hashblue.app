@@ -1,6 +1,5 @@
 require 'net/https'
 require 'uri'
-$LOAD_PATH.unshift File.expand_path("../gems/json_pure-1.4.6/lib", __FILE__)
 require 'json/pure'
 
 class OAuthManager

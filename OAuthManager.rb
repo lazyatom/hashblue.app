@@ -1,14 +1,14 @@
-require 'net/http'
+require 'net/https'
 require 'uri'
 require 'rubygems'
 require 'json'
 
 class OAuthManager
-	IDENTIFIER = 'ru1tad9ccm47'
-	SECRET = 'uueqvgfhecbok8glerjm9vg1ki94f07l'
-	HOST = 'hashblue.local'
-	API_HOST = 'api.' + HOST
-	OAUTH_SERVER = 'http://' + HOST
+	IDENTIFIER = 'soaE0hCXWAE5jwpW'
+	SECRET = 'LIYOzaHZnFoz98OF4CL31Ia7ZooKyM8J'
+	HOST = 'hashblue.com'
+	API_HOST = 'https://api.' + HOST
+	OAUTH_SERVER = 'https://' + HOST
 
 	# Load some data from the server, and yield it to the given block.
 	# If this client is not authorized, we will perform the authorization and then
@@ -16,12 +16,14 @@ class OAuthManager
 	def get(path, &block)
 		if @token
 			puts "Authorized, loading #{path}"
-			request = Net::HTTP.new(API_HOST)
+            uri = URI.parse(API_HOST)
+			http = Net::HTTP.new(uri.host, uri.port)
+            http.use_ssl = true if uri.scheme == 'https'
 			headers = {
 				'Accept' => 'application/json',
 				'Authorization' => "OAuth #{@token['access_token']}"
 			}
-			response = request.get2(path, headers)
+			response = http.get2(path, headers)
 			if response.code == "200"
 				yield JSON.parse(response.body)
 			else
@@ -38,12 +40,19 @@ class OAuthManager
 		params = {:client_id => IDENTIFIER, :client_secret => SECRET, :type => 'web_server',
 							:grant_type => 'authorization_code',
 							:code => code, :redirect_uri => redirect_uri}
-		response = Net::HTTP.post_form URI.parse(OAUTH_SERVER + "/oauth/access_token"), params
+        uri = URI.parse(OAUTH_SERVER + "/oauth/access_token")
+        request = Net::HTTP::Post.new(uri.path)
+        request.set_form_data(params)
+        http = Net::HTTP.new(uri.host, uri.port)
+        http.use_ssl = true if uri.scheme == 'https'
+        response = http.start { |http| http.request(request) }
 		if response.code == "200"
 			token = JSON.parse(response.body)
 			setToken(token)
 			processStash
-		end
+		else
+          puts "Error: #{response.body}"
+        end
 	end
 
 	private
